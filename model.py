@@ -18,8 +18,8 @@ from keras.backend import clear_session
 lines = []
 
 # Initialize hyper parameters
-batch_size = 256
-epochs = 40
+batch_size = 64
+epochs = 15
 
 ### Function Definitions
 
@@ -83,20 +83,20 @@ def generator(samples, batch_size=32):
 			measurements.append((measurement - side_camera_angle_offset))
 			measurements.append((measurement - side_camera_angle_offset) * -1)
 
-			# Convert to np array types
-			X = np.array(images)
-			y = np.array(measurements)
+		# Convert to np array types
+		X = np.array(images)
+		y = np.array(measurements)
+		
+		start += batch_size
+		stop += batch_size
+		
+		if start >= num_samples:
+			start = 0
+			stop = batch_size
 			
-			start += batch_size
-			stop += batch_size
-			
-			if start >= num_samples:
-				start = 0
-				stop = batch_size
-				
-			sklearn.utils.shuffle(X, y)
-			
-			yield (X, y)
+		sklearn.utils.shuffle(X, y)
+		
+		yield (X, y)
 		
 ### Data import
 
@@ -141,7 +141,7 @@ model.add(Dense(1))
 # Model optimization and training
 model.compile(loss = 'mse', optimizer = 'adam', metrics=['accuracy'])
 #history = model.fit(X_train, y_train, validation_split = 0.2, shuffle = True, nb_epoch = epochs, batch_size = batch_size)
-h = model.fit_generator(train_generator, samples_per_epoch=len(train_lines)*6, validation_data=validation_generator, nb_val_samples=len(validation_lines)*6, nb_epoch=epochs)
+h = model.fit_generator(train_generator, samples_per_epoch=len(train_lines)*3, validation_data=validation_generator, nb_val_samples=len(validation_lines)*3, nb_epoch=epochs)
 history = h.history
 
 ### Model post processing

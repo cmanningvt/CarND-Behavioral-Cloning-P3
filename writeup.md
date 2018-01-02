@@ -73,11 +73,11 @@ I had a lot of issues getting driving the simulator manually. I felt like I coul
 
 #### 1. Solution Design Approach
 
-The overall strategy for deriving a model architecture was to ...
+The overall strategy for deriving a model architecture was to use an existing network architecture and adapt it to the project requirements.
 
 My first step was to use a convolution neural network model similar to the nVIDIA network. I thought this model might be appropriate because it was designed for calculating steering angle from image data.
 
-In order to gauge how well the model was working, I split my image and steering angle data into a training and validation set. I found that my first model had a low mean squared error on the training set but a high mean squared error on the validation set. This implied that the model was overfitting. So I reduced the number of epochs to find a good point of stability.
+In order to gauge how well the model was working, I split my image and steering angle data into a training and validation set. I found that my first model had a low mean squared error on the training set but a high mean squared error on the validation set. It was also 'pinballing' around the road (i.e. swerving side to side slowly but stil staying on the driving track). This implied that the model was over fitting. So I reduced the number of epochs to find a good point of stability.
 
 ![alt text][image2]
 
@@ -116,4 +116,4 @@ I then preprocessed this data by normalizing the data and cropping it to remove 
 
 I finally randomly shuffled the data set and put 20% of the data into a validation set. 
 
-I used this training data for training the model. The validation set helped determine if the model was over or under fitting. The ideal number of epochs was 40. I used an adam optimizer so that manually training the learning rate wasn't necessary.
+I used this training data for training the model. The validation set helped determine if the model was over or under fitting. The ideal number of epochs was 15-20. I used an adam optimizer so that manually training the learning rate wasn't necessary.
