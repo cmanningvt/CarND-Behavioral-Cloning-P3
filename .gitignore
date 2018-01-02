@@ -3,4 +3,5 @@ __pycache__
 .vscode
 *.zip
 data
-data_sample
+track1
+run1

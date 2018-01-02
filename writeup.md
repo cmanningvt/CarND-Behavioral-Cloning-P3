@@ -19,12 +19,12 @@ The goals / steps of this project are the following:
 [image1]: ./img/model.png "Model Visualization"
 [image2]: ./img/lossPlot.png "Loss Plot"
 [image3]: ./img/center.jpg "Center Image"
-[image4]: ./img/right.png "Recovery Image"
-[image5]: ./img/left.png "Recovery Image"
-[image6]: ./img/center_flipped.png "Flipped Image"
+[image4]: ./img/right.jpg "Recovery Image"
+[image5]: ./img/left.jpg "Recovery Image"
+[image6]: ./img/center_flipped.jpg "Flipped Image"
 
 ## Rubric Points
-### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/432/view) individually and describe how I addressed each point in my implementation.  Many decisions were made with the help of the [Behavioral Cloning Cheat Sheet] (file:///C:/Users/cmann/Downloads/Behavioral%20Cloning%20Cheatsheet%20-%20CarND%20(1).pdf)
+### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/432/view) individually and describe how I addressed each point in my implementation.  Many decisions were made with the help of the [Behavioral Cloning Cheat Sheet](https://slack-files.com/T2HQV035L-F50B85JSX-7d8737aeeb)
 
 ---
 ### Files Submitted & Code Quality
@@ -52,7 +52,7 @@ The model.py file contains the code for training and saving the convolution neur
 
 #### 1. An appropriate model architecture has been employed
 
-My model consists of using the [nVIDIA model] (https://devblogs.nvidia.com/parallelforall/deep-learning-self-driving-cars/) mentioned in the course contents. This has convolutional layers with 3x3 and 5x5 fileters with depths between 24 and 64 (model.py lines 121-139).
+My model consists of using the [nVIDIA model](https://devblogs.nvidia.com/parallelforall/deep-learning-self-driving-cars/) mentioned in the course contents. This has convolutional layers with 3x3 and 5x5 fileters with depths between 24 and 64 (model.py lines 121-139).
 I added a cropping layer in the beginning to make sure that any cropping effects were included when running the trained model with the similator. Doing cropping during the prepossessing steps would have caused issues when running with the simulator.
 
 The model includes RELU layers to introduce nonlinearity, and the data is normalized in the model using a Keras lambda layer (code line 124). 
