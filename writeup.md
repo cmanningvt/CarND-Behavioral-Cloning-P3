@@ -19,8 +19,8 @@ The goals / steps of this project are the following:
 [image1]: ./img/model.png "Model Visualization"
 [image2]: ./img/lossPlot.png "Loss Plot"
 [image3]: ./img/center.jpg "Center Image"
-[image4]: ./img/right.jpg "Recovery Image"
-[image5]: ./img/left.jpg "Recovery Image"
+[image4]: ./img/left.jpg "Recovery Image"
+[image5]: ./img/right.jpg "Recovery Image"
 [image6]: ./img/center_flipped.jpg "Flipped Image"
 
 ## Rubric Points
