@@ -104,7 +104,6 @@ I was unable to collect data reliably by myself so I used the sample data from t
 I also used images from the left side and right sides of the road back to center so that the vehicle would learn to recover from being off center of the road.
 
 ![alt text][image4]
-![alt text][image3]
 ![alt text][image5]
 
 To augment the data sat, I also flipped images and angles thinking that this would generalize the model since most of the track involves left hand turns. For example, here is an image that has then been flipped:
