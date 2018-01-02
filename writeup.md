@@ -117,3 +117,8 @@ I then preprocessed this data by normalizing the data and cropping it to remove 
 I finally randomly shuffled the data set and put 20% of the data into a validation set. 
 
 I used this training data for training the model. The validation set helped determine if the model was over or under fitting. The ideal number of epochs was 15-20. I used an adam optimizer so that manually training the learning rate wasn't necessary.
+
+
+## Future Enhancements
+
+Obviously, more data is always a good idea. Collecting and using more data to train the network will result in better results. More recovery driving, and driving on different tracks would help to improve. 
